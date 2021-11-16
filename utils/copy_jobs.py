@@ -20,10 +20,26 @@ def get_all_jobs(client: Client, name_prefix = ""):
     return get_all([], 0)
 
 def clone_jobs(src_client: Client, target_client: Client, jobs):
+    aws_attributes = {"zone_id": "us-west-2a", "first_on_demand": 1, "availability": "SPOT_WITH_FALLBACK", "spot_bid_price_percent": 100, "ebs_volume_count": 0}
+    aws_node_type = "i3.xlarge"
+    azure_attributes = {"availability": "SPOT_WITH_FALLBACK_AZURE", "first_on_demand": 1, "spot_bid_max_price": -1}
+    azure_node_type = "Standard_L4s"
+
     new_jobs = []
     for j in jobs:
         j = requests.get(src_client.url+"/api/2.1/jobs/get", headers = src_client.headers, json={"job_id": j["job_id"]}).json()
-        new_j = requests.post(target_client.url+"/api/2.1/jobs/create", headers = target_client.headers, json = j["settings"]).json()
+        import json
+        print(json.dumps(j))
+        data = j["settings"]
+        for task in data["tasks"]:
+            #updating the
+            if "new_cluster" in task and "azure" in target_client.url:
+                task["new_cluster"]["node_type_id"] = azure_node_type
+                del task["new_cluster"]["aws_attributes"]
+                task["new_cluster"]["azure_attributes"] = azure_attributes
+
+        print(f"job cloning: {data}")
+        new_j = requests.post(target_client.url+"/api/2.1/jobs/create", headers = target_client.headers, json = data).json()
         print(f"new job cloned: {new_j}")
         new_jobs.append(new_j["job_id"])
     return new_jobs
@@ -35,14 +51,16 @@ def launch_pipelines(client: Client, pipelines_id):
         print(p)
 
 
-def clone_jobs_starting_with(src_client: Client, target_client: Client, prefix):
-    assert len(prefix) > 1
-    #delete existing pipelines starting with "field_demos"
-    delete_jobs(target_client, prefix)
-    #get the pipelines to clone from the source
-    print(f"fetching jobs to clone starting with {prefix}...")
-    jobs_to_clone = get_all_jobs(src_client, prefix)
-    #re-create the pipelines:
-    clones_id = clone_jobs(src_client, target_client, jobs_to_clone)
-    print(f"job cloned: {clones_id}")
+def clone_jobs_starting_with(src_client: Client, target_client: Client, prefixes):
+    #Todo could do something more efficient by pushes a list of prefix in the functions instead
+    for prefix in prefixes:
+        assert len(prefix) > 1
+        #delete existing pipelines starting with "field_demos"
+        delete_jobs(target_client, prefix)
+        #get the pipelines to clone from the source
+        print(f"fetching jobs to clone starting with {prefix}...")
+        jobs_to_clone = get_all_jobs(src_client, prefix)
+        #re-create the pipelines:
+        clones_id = clone_jobs(src_client, target_client, jobs_to_clone)
+        print(f"job cloned: {clones_id}")
 

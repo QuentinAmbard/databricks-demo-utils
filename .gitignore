@@ -3,5 +3,5 @@ state.json
 doc/field-demo
 utils/__pycache__
 secret.json
-secret.json
+config.json
 *.iml

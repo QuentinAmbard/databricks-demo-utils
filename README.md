@@ -3,13 +3,16 @@
 ## Resource clone
 
 ### Setup:
-Create a file named `secret.json` and put your credential. You need to define the source (where the resources will be copied from) and a list of targets (where the resources will be cloned).
+Create a file named `config.json` and put your credential. You need to define the source (where the resources will be copied from) and a list of targets (where the resources will be cloned).
 
 ```json
 {
   "source": {
     "url": "https://xxxxx.cloud.databricks.com",
-    "token": "xxxxxxx"
+    "token": "xxxxxxx",
+    "job_prefixes": ["field_demo"], /* Job starting with these value will be deleted from target and cloned */ 
+    "dlt_prefixes": ["field_demo"], /* DLT starting with these value will be deleted from target and cloned */
+    "dashboard_tags": ["field_demos"] /* Dashboards having any of these tags matching will be deleted from target and cloned */
   },
   "targets": [
     {

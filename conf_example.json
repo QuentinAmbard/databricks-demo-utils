@@ -1,0 +1,22 @@
+{
+  "source": {
+    "url": "https://xxxx.databricks.com",
+    "token": "xxxxx",
+    "job_prefixes": ["field_demo"],
+    "dlt_prefixes": ["field_demo"],
+    "dashboard_tags": ["field_demos"]
+  },
+  "targets": [
+    {
+      "url": "https://xxxx.cloud.databricks.com",
+      "token": "xxxxxx",
+      "data_source_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "sql_database_name": "xxx"
+    },
+    {
+      "url": "https://xxxxxxxxxxxx.xx.azuredatabricks.net",
+      "token": "xxxxxxxx",
+      "data_source_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+from typing import List
+
 import requests
 import json
 from utils.client import Client
@@ -112,13 +114,16 @@ def clone_dashboard_by_id(source_client: Client, target_client: Client, dashboar
             q = requests.get(source_client.url+"/api/2.0/preview/sql/queries/"+query_id, headers = source_client.headers).json()
             q_creation = {
                 "data_source_id": target_client.data_source_id,
-                "query": q["query"].replace("field_demos_retail", "reinvent2021_retail"),
+                "query": q["query"],
                 "name": q["name"],
                 "description": q["description"],
                 "schedule": q["schedule"],
                 "tags": q["tags"],
                 "options": q["options"]
             }
+            if target_client.sql_database_name:
+                q_creation["query"] = q_creation["query"].replace("field_demos_retail", target_client.sql_database_name)
+
             print(f"     cloning query {q_creation}...")
             new_query = requests.post(target_client.url+"/api/2.0/preview/sql/queries", headers = target_client.headers, json = q_creation).json()
             visualizations = clone_query_visualization(target_client, q, new_query)
@@ -126,8 +131,8 @@ def clone_dashboard_by_id(source_client: Client, target_client: Client, dashboar
         duplicate_dashboard(target_client, dashboard, state[clone_state_id])
     return state
 
-def clone_dashboards_with_tags(source_client: Client, target_client: Client, tags):
-    assert len(tags) > 1
+def clone_dashboards_with_tags(source_client: Client, target_client: Client, tags: List):
+    assert len(tags) > 0
     #Cleanup all existing ressources.
     delete_queries(target_client, tags)
     delete_dashboard(target_client, tags)

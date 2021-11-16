@@ -35,12 +35,15 @@ def launch_pipelines(client: Client, pipelines_id):
         p = requests.post(client.url+"/api/2.0/pipelines/"+id+"/updates", headers = client.headers).json()
         print(p)
 
-def clone_pipelines_starting_with(source_client: Client, target_query: Client, prefix):
-    delete_pipelines(target_query, prefix)
-    #get the pipelines to clone from the source
-    pipelines_to_clone = get_all_pipelines(source_client, prefix)
-    #re-create the pipelines:
-    clones_id = clone_pipelines(source_client, target_query, pipelines_to_clone)
-    #and run them to warm them up
-    launch_pipelines(target_query, clones_id)
+def clone_pipelines_starting_with(source_client: Client, target_query: Client, prefixes):
+    #Todo could do something more efficient by pushes a list of prefix in the functions instead
+    for prefix in prefixes:
+        assert len(prefix) > 1
+        delete_pipelines(target_query, prefix)
+        #get the pipelines to clone from the source
+        pipelines_to_clone = get_all_pipelines(source_client, prefix)
+        #re-create the pipelines:
+        clones_id = clone_pipelines(source_client, target_query, pipelines_to_clone)
+        #and run them to warm them up
+        launch_pipelines(target_query, clones_id)
 
