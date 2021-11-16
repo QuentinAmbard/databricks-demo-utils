@@ -1,0 +1,47 @@
+{
+  "Vertical Demos": {
+    "Retail / B2C": {
+      "demo_folder": "retail-demo",
+      "dbc_archive": "https://github.com/databricks/field-demo/raw/master/bundle/retail-demo.dbc",
+      "technical_personas": {
+        "demo_flow": {
+          "Lakehouse": {
+            "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+            "time": 20
+          },
+          "Data Engineer": {
+            "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+            "time": 20
+          },
+          "Data Science": {
+            "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+            "time": 20
+          },
+          "Data Analyst": {
+            "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+            "time": 20
+          },
+          "C-level": {
+            "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+            "time": 20
+          }
+        }
+      }
+    }
+  },
+  "Technical Demos": {
+    "Delta Lake or Delta Sharing": {
+      "demo_folder": "delta-lake-and-share-demo",
+      "technical_personas": {
+        "slides": null,
+        "dbc_archive": "https://github.com/databricks/field-demo/raw/master/bundle/delta-lake-and-share-demo.dbc",
+        "demo_flow": {
+          "Delta Lake": {
+          },
+          "Delta Sharing": {
+          }
+        }
+      }
+    }
+  }
+}

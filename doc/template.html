@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <title>Field demos doc</title>
+    <style>
+body {
+  margin: 30px;
+  font-family: sans-serif;
+  }
+
+
+#fontSize {
+  width: 100px;
+  font-size: 1em;
+  }
+
+/* ————————————————————–
+  Tree core styles
+*/
+.tree { margin: 1em; }
+
+.tree input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  }
+
+.tree input ~ ul { display: none; padding: 0px; list-style-type: none;}
+
+.tree input:checked ~ ul { display: block; }
+
+/* ————————————————————–
+  Tree rows
+*/
+.tree li {
+    padding: 0px;
+}
+.tree li {
+  line-height: 1.2;
+  position: relative;
+  padding: 0 0 1em 1em;
+  list-style-type: none;
+  }
+
+.tree ul li { padding: 0.1em 0 0 1em; }
+
+.tree > li:last-child { padding-bottom: 0; }
+
+/* ————————————————————–
+  Tree labels
+*/
+.tree_label {
+
+  position: relative;
+  display: inline-block;
+  background: #fff;
+  }
+
+label.tree_label { cursor: pointer; }
+
+label.tree_label:hover { color: #666; }
+
+/* ————————————————————–
+  Tree expanded icon
+*/
+label.tree_label:before {
+  background: #3e6bf3;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  float: left;
+  margin: 0 1em 0 -2em;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  content: '+';
+  text-align: center;
+  line-height: .9em;
+  }
+
+:checked ~ label.tree_label:before { content: '–'; }
+
+/* ————————————————————–
+  Tree branches
+*/
+.tree li:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -.5em;
+  display: block;
+  width: 0;
+  border-left: 1px solid #2d46ff;
+  content: "";
+  }
+
+.tree_label:after {
+  position: absolute;
+  top: 0;
+  left: -1.5em;
+  display: block;
+  height: 0.5em;
+  width: 1em;
+  border-bottom: 1px solid #2d46ff;
+  border-left: 1px solid #2d46ff;
+  border-radius: 0 0 0 .3em;
+  content: '';
+  }
+
+label.tree_label:after { border-bottom: 0; }
+
+:checked ~ label.tree_label:after {
+  border-radius: 0 .3em 0 0;
+  border-top: 1px solid #2d46ff;
+  border-right: 1px solid #2d46ff;
+  border-bottom: 0;
+  border-left: 0;
+  bottom: 0;
+  top: 0.5em;
+  height: auto;
+  }
+
+.tree li:last-child:before {
+  height: 1em;
+  bottom: auto;
+  }
+
+.tree > li:last-child:before { display: none; }
+
+.tree_custom {
+  display: block;
+  background: #eee;
+  padding: 1em;
+  border-radius: 0.3em;
+}
+</style>
+<script type="script/javascript">
+
+</script>
+</head>
+
+<body>
+
+<!--[MAIN] --> 
+</div></div><div class="container"><h2>Vertical Demos</h2><div class="row"><h4>Retail / B2C <button type="button" class="btn btn-primary">Demo deck</button> <button type="button" class="btn btn-warning">Get .dbc archive</button></h4>
+                            <div class="col-3"><div class="list-group">
+                    
+                    <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                <h6 class="mb-0">Lakehouse</h6>
+                                <button type="button" class="btn btn-outline-warning btn-sm">How to run the demo</button>
+                            </div>
+                            <small class="opacity-50 text-nowrap">20min</small>
+                        </div>
+                    </a>
+                    
+                    <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                <h6 class="mb-0">Data Engineer</h6>
+                                <button type="button" class="btn btn-outline-warning btn-sm">How to run the demo</button>
+                            </div>
+                            <small class="opacity-50 text-nowrap">20min</small>
+                        </div>
+                    </a>
+                    
+                    <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                <h6 class="mb-0">Data Science</h6>
+                                <button type="button" class="btn btn-outline-warning btn-sm">How to run the demo</button>
+                            </div>
+                            <small class="opacity-50 text-nowrap">20min</small>
+                        </div>
+                    </a>
+                    
+                    <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                <h6 class="mb-0">Data Analyst</h6>
+                                <button type="button" class="btn btn-outline-warning btn-sm">How to run the demo</button>
+                            </div>
+                            <small class="opacity-50 text-nowrap">20min</small>
+                        </div>
+                    </a>
+                    
+                    <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                <h6 class="mb-0">C-level</h6>
+                                <button type="button" class="btn btn-outline-warning btn-sm">How to run the demo</button>
+                            </div>
+                            <small class="opacity-50 text-nowrap">20min</small>
+                        </div>
+                    </a></div>
+                </div>
+                <div class="col">    
+                <div class="tree"><h4>Ressources: <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Dashboards</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">global-sales-report  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/sql/dashboards/ab66e6c6-c2c5-4434-b784-ea5b02fe5eeb-global-sales-report?o=1444828305810485">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/sql/dashboards/5d53f485-f412-44ac-b0d7-dd0b30b5e09c-global-sales-report?o=984752964297111">Azure</a></div></li><li><div class="dropdown-item">retail-data-quality-stats </div></li>
+                            </ul>
+                        </div> <div class="btn-group">
+                            <button type="button" class="btn btn-success dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Queries</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">customer-satisfaction-evolution  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/sql/queries/1fcadf10-7e45-4430-b544-bb7d678e7a26/source?o=1444828305810485">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/sql/queries/51b8062c-b721-428c-a93e-b5d46cc7ca28/source?o=984752964297111">Azure</a></div></li>
+                            </ul>
+                        </div> <div class="btn-group">
+                            <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">DLT</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">DLT customer SQL  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/?o=1444828305810485#joblist/pipelines/95f28631-1884-425e-af69-05c3f397dd90">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/?o=984752964297111#joblist/pipelines/bcae1073-6fac-4e4d-930e-01f6ffe8445c">Azure</a></div></li>
+                            </ul>
+                        </div> </h4><ul><li>
+                <input type="checkbox" checked="checked" id="c0" />
+                <label class="tree_label" for="c0">retail-demo</label><ul><li>
+            <span class="tree_label">
+                <div style="font-weight: bold;">
+                    01.1-Delta-Pipeline-Ingestion.py <span class="badge rounded-pill bg-primary">Python</span>
+                </div>
+                <div style="float: right">
+                    <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Dashboards</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">global-sales-report  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/sql/dashboards/ab66e6c6-c2c5-4434-b784-ea5b02fe5eeb-global-sales-report?o=1444828305810485">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/sql/dashboards/5d53f485-f412-44ac-b0d7-dd0b30b5e09c-global-sales-report?o=984752964297111">Azure</a></div></li>
+                            </ul>
+                        </div> <div class="btn-group">
+                            <button type="button" class="btn btn-success dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Queries</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">customer-satisfaction-evolution  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/sql/queries/1fcadf10-7e45-4430-b544-bb7d678e7a26/source?o=1444828305810485">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/sql/queries/51b8062c-b721-428c-a93e-b5d46cc7ca28/source?o=984752964297111">Azure</a></div></li>
+                            </ul>
+                        </div> <div class="btn-group">
+                            <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">DLT</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">DLT customer SQL  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/?o=1444828305810485#joblist/pipelines/95f28631-1884-425e-af69-05c3f397dd90">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/?o=984752964297111#joblist/pipelines/bcae1073-6fac-4e4d-930e-01f6ffe8445c">Azure</a></div></li>
+                            </ul>
+                        </div> 
+                </div>
+ 
+                <div style="font-size: 14px;padding-left: 15px; width: 800px">
+                    Basic Data Engineering pipeline to prepare the data with Delta Lake. COPY INTO, SQL, Python, stream. BRONZE/SILVER/LAYOUT. <br/>Use this notebook for a basic data prep / exploration demo / Lakehouse presentation.
+                </div>
+            </span></li><li>
+            <span class="tree_label">
+                <div style="font-weight: bold;">
+                    01.2-Delta-Pipeline-Ingestion-full.py <span class="badge rounded-pill bg-primary">Python</span>
+                </div>
+                <div style="float: right">
+                    <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Dashboards</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">global-sales-report  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/sql/dashboards/ab66e6c6-c2c5-4434-b784-ea5b02fe5eeb-global-sales-report?o=1444828305810485">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/sql/dashboards/5d53f485-f412-44ac-b0d7-dd0b30b5e09c-global-sales-report?o=984752964297111">Azure</a></div></li>
+                            </ul>
+                        </div> <div class="btn-group">
+                            <button type="button" class="btn btn-success dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Queries</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">customer-satisfaction-evolution  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/sql/queries/1fcadf10-7e45-4430-b544-bb7d678e7a26/source?o=1444828305810485">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/sql/queries/51b8062c-b721-428c-a93e-b5d46cc7ca28/source?o=984752964297111">Azure</a></div></li>
+                            </ul>
+                        </div> <div class="btn-group">
+                            <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">DLT</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">DLT customer SQL  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/?o=1444828305810485#joblist/pipelines/95f28631-1884-425e-af69-05c3f397dd90">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/?o=984752964297111#joblist/pipelines/bcae1073-6fac-4e4d-930e-01f6ffe8445c">Azure</a></div></li>
+                            </ul>
+                        </div> 
+                </div>
+ 
+                <div style="font-size: 14px;padding-left: 15px; width: 800px">
+                    Advanced Data Engineering pipeline to prepare the data with Delta Lake. SQL, Python, stream. BRONZE/SILVER/LAYOUT. <br/>Use this notebook for Data engineering.
+                </div>
+            </span></li><li>
+                <input type="checkbox"  id="c1" />
+                <label class="tree_label" for="c1">02-Delta-Live-Table</label><ul><li>
+            <span class="tree_label">
+                <div style="font-weight: bold;">
+                    02.1-Delta-Live-Table-Ingestion.sql <span class="badge rounded-pill bg-primary">SQL</span>
+                </div>
+                <div style="float: right">
+                    <div class="btn-group">
+                            <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">DLT</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">DLT customer SQL  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/?o=1444828305810485#joblist/pipelines/95f28631-1884-425e-af69-05c3f397dd90">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/?o=984752964297111#joblist/pipelines/bcae1073-6fac-4e4d-930e-01f6ffe8445c">Azure</a></div></li>
+                            </ul>
+                        </div> 
+                </div>
+ 
+                <div style="font-size: 14px;padding-left: 15px; width: 800px">
+                    Delta Live Table example in SQL. BRONZE/SILVER/LAYOUT. Expectations to track data quality. Load model from MLFLow registry and call it to apply customer segmentation as last step.<br/>Use this notebook for a basic DLT demo / Lakehouse presentation.
+                </div>
+            </span></li><li>
+            <span class="tree_label">
+                <div style="font-weight: bold;">
+                    02.2-Delta-Live-Table-Python-UDF.py <span class="badge rounded-pill bg-primary">Python</span>
+                </div>
+                <div style="float: right">
+                    <div class="btn-group">
+                            <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">DLT</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">DLT customer SQL  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/?o=1444828305810485#joblist/pipelines/95f28631-1884-425e-af69-05c3f397dd90">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/?o=984752964297111#joblist/pipelines/bcae1073-6fac-4e4d-930e-01f6ffe8445c">Azure</a></div></li>
+                            </ul>
+                        </div> 
+                </div>
+ 
+                <div style="font-size: 14px;padding-left: 15px; width: 800px">
+                    Load ML model from registry in python to inject it in a DLT SQL pipeline.
+                </div>
+            </span></li><li>
+            <span class="tree_label">
+                <div style="font-weight: bold;">
+                    02.3-DLT-expectation-dashboard-data-prep.py <span class="badge rounded-pill bg-primary">Python</span>
+                </div>
+                <div style="float: right">
+                    <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle btn-sm" data-bs-toggle="dropdown" aria-expanded="false">Dashboards</button>
+                            <ul class="dropdown-menu">
+                            <li><div class="dropdown-item">retail-data-quality-stats  | <a target="_blank" href="https://e2-demo-field-eng.cloud.databricks.com/sql/dashboards/6f73dd1b-17b1-49d0-9a11-b3772a2c3357-dlt---retail-data-quality-stats?o=1444828305810485">AWS</a> | <a target="_blank" href="https://adb-984752964297111.11.azuredatabricks.net/sql/dashboards/d7631f79-d5b7-4034-b724-8e3ee38dfde6-dlt---retail-data-quality-stats?o=984752964297111">Azure</a></div></li>
+                            </ul>
+                        </div> 
+                </div>
+ 
+                <div style="font-size: 14px;padding-left: 15px; width: 800px">
+                    Notebook extracting DLT expectations as delta tables used to build DBSQL data quality Dashboard.
+                </div>
+            </span></li></ul></li><li>
+                <input type="checkbox"  id="c2" />
+                <label class="tree_label" for="c2">03-advanced-data-engineering</label><ul><li><span class="tree_label">01-Retail-CDC-delta-ingestion.py</span><ul></ul></li><li><span class="tree_label">02-Retail-CDC-on-delta-table.py</span><ul></ul></li></ul></li><li>
+                <input type="checkbox"  id="c5" />
+                <label class="tree_label" for="c5">04-DataScience-ML-use-cases</label><ul><li>
+                <input type="checkbox"  id="c6" />
+                <label class="tree_label" for="c6">04.1-ml-product-classification</label><ul><li><span class="tree_label">01-Image-ingestion-products.py</span><ul></ul></li><li><span class="tree_label">02-Classification-products.py</span><ul></ul></li><li><span class="tree_label">03-Classification-products-hyperopt.py</span><ul></ul></li></ul></li><li>
+                <input type="checkbox"  id="c10" />
+                <label class="tree_label" for="c10">04.2-customer-segmentation</label><ul><li><span class="tree_label">01-Retail-customer-segmentation.py</span><ul></ul></li><li><span class="tree_label">02-pandas-api-koalas.py</span><ul></ul></li></ul></li><li>
+                <input type="checkbox"  id="c13" />
+                <label class="tree_label" for="c13">04.3-sales-forecasting</label><ul><li><span class="tree_label">01-retail-demand-forecast.py</span><ul></ul></li><li><span class="tree_label">02-retail-forecast-hyperopt-spark.py</span><ul></ul></li></ul></li></ul></li><li>
+                <input type="checkbox"  id="c16" />
+                <label class="tree_label" for="c16">resources</label><ul><li><span class="tree_label">00-prep-data-db-sql.py</span><ul></ul></li><li><span class="tree_label">00-setup.py</span><ul></ul></li><li><span class="tree_label">01-setup-prophet.py</span><ul></ul></li><li><span class="tree_label">02-setup-segmentation.py</span><ul></ul></li></ul></li></ul></li></ul></div>
+                </div></div><br/><br/><h2>Technical Demos</h2><div class="row"><h4>Delta Lake or Delta Sharing <button type="button" class="btn btn-primary">Demo deck</button> <button type="button" class="btn btn-warning">Get .dbc archive</button></h4>
+                            <div class="col-3"><div class="list-group">
+                    
+                    <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                <h6 class="mb-0">Delta Lake</h6>
+                                <button type="button" class="btn btn-outline-warning btn-sm">How to run the demo</button>
+                            </div>
+                            <small class="opacity-50 text-nowrap">20min</small>
+                        </div>
+                    </a>
+                    
+                    <a class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <div class="d-flex gap-2 w-100 justify-content-between">
+                                <div>
+                                <h6 class="mb-0">Delta Sharing</h6>
+                                <button type="button" class="btn btn-outline-warning btn-sm">How to run the demo</button>
+                            </div>
+                            <small class="opacity-50 text-nowrap">20min</small>
+                        </div>
+                    </a></div>
+                </div>
+                <div class="col">    
+                <div class="tree"><h4>Ressources: </h4><ul><li>
+                <input type="checkbox" checked="checked" id="c0" />
+                <label class="tree_label" for="c0">delta-lake-and-share-demo</label><ul><li><span class="tree_label">00-Delta-Lake-Demo.py</span><ul></ul></li><li><span class="tree_label">01-delta-sharing-demo.sql</span><ul></ul></li><li><span class="tree_label">02-accessing-delta-sharing.py</span><ul></ul></li><li>
+                <input type="checkbox"  id="c4" />
+                <label class="tree_label" for="c4">resources</label><ul><li><span class="tree_label">00-setup.py</span><ul></ul></li></ul></li></ul></li></ul></div>
+                </div></div><br/><br/>
+<!--[MAIN] -->
+
+
+</body>
+</html>
