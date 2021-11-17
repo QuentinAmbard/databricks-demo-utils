@@ -51,7 +51,7 @@ def launch_pipelines(client: Client, pipelines_id):
         print(p)
 
 
-def clone_jobs_starting_with(src_client: Client, target_client: Client, prefixes):
+def delete_and_clone_jobs_starting_with(src_client: Client, target_client: Client, prefixes):
     #Todo could do something more efficient by pushes a list of prefix in the functions instead
     for prefix in prefixes:
         assert len(prefix) > 1

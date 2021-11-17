@@ -19,6 +19,6 @@ def get_client():
 
 source_client, target_clients = get_client()
 for target_client in target_clients:
-    copy_dashboard.clone_dashboards_with_tags(source_client, target_client, source_client.dashboard_tags)
-    copy_jobs.clone_jobs_starting_with(source_client, target_client, source_client.job_prefixes)
-    #copy_dlt_pipeline.clone_pipelines_starting_with(source_client, dest_client, source_client.dlt_prefixes)
+    #copy_dashboard.delete_and_clone_dashboards_with_tags(source_client, target_client, source_client.dashboard_tags)
+    #copy_jobs.delete_and_clone_jobs_starting_with(source_client, target_client, source_client.job_prefixes)
+    copy_dlt_pipeline.delete_and_copy_pipelines_starting_with(source_client, target_client, source_client.dlt_prefixes)

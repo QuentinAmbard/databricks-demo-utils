@@ -131,7 +131,7 @@ def clone_dashboard_by_id(source_client: Client, target_client: Client, dashboar
         duplicate_dashboard(target_client, dashboard, state[clone_state_id])
     return state
 
-def clone_dashboards_with_tags(source_client: Client, target_client: Client, tags: List):
+def delete_and_clone_dashboards_with_tags(source_client: Client, target_client: Client, tags: List):
     assert len(tags) > 0
     #Cleanup all existing ressources.
     delete_queries(target_client, tags)

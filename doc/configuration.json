@@ -1,47 +1,128 @@
 {
   "Vertical Demos": {
     "Retail / B2C": {
-      "demo_folder": "retail-demo",
-      "dbc_archive": "https://github.com/databricks/field-demo/raw/master/bundle/retail-demo.dbc",
-      "technical_personas": {
-        "demo_flow": {
-          "Lakehouse": {
-            "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
-            "time": 20
+      "db_resources": {
+        "Dashboards": {
+          "Global Sales Report": {
+            "AWS": "https://e2-demo-field-eng.cloud.databricks.com/sql/dashboards/ab66e6c6-c2c5-4434-b784-ea5b02fe5eeb-global-sales-report?o=1444828305810485",
+            "Azure": "https://adb-984752964297111.11.azuredatabricks.net/sql/dashboards/5d53f485-f412-44ac-b0d7-dd0b30b5e09c-global-sales-report?o=984752964297111"
           },
-          "Data Engineer": {
-            "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
-            "time": 20
+          "Customer Satisfaction by Segment": {
+            "AWS": "https://e2-demo-field-eng.cloud.databricks.com/sql/dashboards/dbb7f120-9c58-471f-9817-a7c0e1b9cbe6-customer-segmentation---satisfaction?o=1444828305810485",
+            "Azure": "https://adb-984752964297111.11.azuredatabricks.net/sql/dashboards/a9ec4134-1f7e-44ee-9f7d-11130a111c24?o=984752964297111"
           },
-          "Data Science": {
-            "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
-            "time": 20
-          },
-          "Data Analyst": {
-            "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
-            "time": 20
-          },
-          "C-level": {
-            "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
-            "time": 20
+          "DLT Data Quality Stats": {
+            "AWS": "https://e2-demo-field-eng.cloud.databricks.com/sql/dashboards/6f73dd1b-17b1-49d0-9a11-b3772a2c3357-dlt---retail-data-quality-stats?o=1444828305810485",
+            "Azure": "https://adb-984752964297111.11.azuredatabricks.net/sql/dashboards/d7631f79-d5b7-4034-b724-8e3ee38dfde6-dlt---retail-data-quality-stats?o=984752964297111"
+          }
+        },
+        "Queries": {
+          "Customer Satisfaction Evolution": {
+            "AWS": "https://e2-demo-field-eng.cloud.databricks.com/sql/queries/1fcadf10-7e45-4430-b544-bb7d678e7a26/source?o=1444828305810485",
+            "Azure": "https://adb-984752964297111.11.azuredatabricks.net/sql/queries/51b8062c-b721-428c-a93e-b5d46cc7ca28/source?o=984752964297111"
+          }
+        },
+        "DLT": {
+          "DLT customer SQL": {
+            "AWS": "https://e2-demo-field-eng.cloud.databricks.com/?o=1444828305810485#joblist/pipelines/95f28631-1884-425e-af69-05c3f397dd90",
+            "Azure": "https://adb-984752964297111.11.azuredatabricks.net/?o=984752964297111#joblist/pipelines/bcae1073-6fac-4e4d-930e-01f6ffe8445c"
           }
         }
-      }
+      },
+      "demo_folder": "retail-demo",
+      "dbc_archive": "https://github.com/databricks/field-demo/raw/master/bundle/retail-demo.dbc",
+      "demos": [
+        {
+          "name": "Horizontal demos",
+          "demo_flows": {
+            "Lakehouse (Platform)": {
+              "script_image_path": "retail/lakehouse_platform",
+              "description": "Present Databricks Platform capabilities at a high level.",
+              "script": [
+                "Reposition Lakehouse<br/>Introduce the demo (this deck)<br/>Global platform overview.",
+                "Log into the workspace<br/>3 persona overview / lakehouse<br/>Your data, your bucket, open",
+                "Open DBSQL Dashboard, show what you want to build<br/>Insist on the final business value<br/>Link to customer challenges<br/>Pause, ask questions",
+                "Follow data flow<br/>Switch to DS/DE => ingestion<br/>Present the menu (high level, collaborative workspace…)",
+                "Data exploration / ingestion<br/>Use first notebook<br/>01.1-Delta-Pipeline-Ingestion",
+                "Simplify ingestion: open DLT job<br/>Pause, ask questions<br/>Optional:  show DLT in SQL:<br/>02.1-Delta-Live-Table-Ingestion<br/>Optional:  data quality dashboard",
+                "Now that data is ready, Analyst can run Query. Create a new query as ex: “Customers - geo repartition”",
+                "Show that queries are running on SQL endpoint<br/>Open endpoint properties to show external BI tool integration",
+                "Show final dashboard<br/>This dashboard contains segmentation info, let’s see how we can build that<br/>Pause, ask questions",
+                "Switch to Data Science<br/>Go over menu, high level",
+                "Explain the MLops flow<br/>01-Retail-customer-segmentation<br/>Present the flow/notebook in 1min. No advanced ML details.",
+                "Explain that model is sent to registry.<br/>Open customer_segmentation model<br/>Pitch governances/MLops",
+                "Explain how model can be used<br/>(batch/real time example)<br/>Optional: wrap up on using model in DLT",
+                "ML Data is now available to query as SQL, production ready.<br/>Conclude with customer segmentation dashboard<br/>Pause, ask questions",
+                "Wrapup: use the image in the <br/>01.1-Delta-Pipeline-Ingestion notebook to recap what has been done and the value of the Lakehouse for your customer",
+                "Open discussion<br/>next steps<br/>Potentially mention more deep dive demos to solve specific challenges"
+              ],
+              "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+              "time": 20
+            },
+            "Data Engineer": {
+              "script": [],
+              "description": "Demo Databricks platform for Data Engineers (focus on data prep, job)",
+              "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+              "time": 20
+            },
+            "Data Scientist": {
+              "script": [],
+              "description": "Demo Databricks platform for Data Scientist (focus on ML)",
+              "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+              "time": 20
+            },
+            "Data Analyst": {
+              "script": [],
+              "description": "Demo Databricks platform for Data Analyst (focus on DBSQL)",
+              "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+              "time": 20
+            }
+          }
+        },
+        {
+          "name": "Use-case driven demos",
+          "demo_flows": {
+            "Demand forecast": {
+              "script": [],
+              "description": "Demand forecast",
+              "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+              "time": 20
+            },
+            "Churn detection": {
+              "script": [],
+              "description": "Churn detection demo",
+              "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+              "time": 20
+            }
+          }
+        }
+      ]
     }
   },
   "Technical Demos": {
     "Delta Lake or Delta Sharing": {
+      "db_resources": {},
       "demo_folder": "delta-lake-and-share-demo",
-      "technical_personas": {
-        "slides": null,
-        "dbc_archive": "https://github.com/databricks/field-demo/raw/master/bundle/delta-lake-and-share-demo.dbc",
-        "demo_flow": {
-          "Delta Lake": {
-          },
-          "Delta Sharing": {
+      "dbc_archive": "https://github.com/databricks/field-demo/raw/master/bundle/delta-lake-and-share-demo.dbc",
+      "demos": [
+        {
+          "name": "Product demos",
+          "demo_flows": {
+            "Delta Lake": {
+              "script": [],
+              "description": "Demo Delta Lake product",
+              "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+              "time": 20
+            },
+            "Data Sharing": {
+              "script": [],
+              "description": "Demo Delta Sharing product",
+              "link": "https://docs.google.com/presentation/d/1OQkexaYlRgDa3_OtuHie3sjz8fISoiDUoRRe7ewAT9s/edit#slide=id.g1003b5b8682_0_579",
+              "time": 20
+            }
           }
         }
-      }
+      ]
     }
   }
 }

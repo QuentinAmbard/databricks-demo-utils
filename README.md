@@ -50,7 +50,7 @@ The clone utilities use a Client to identify source & target. Check `client.py` 
 
 Dashboard cloning is available in `copy_dashboard.py`.
 
-By default, `copy_dashboard.clone_dashboards_with_tags(source_client, dest_client, tags)` performs a DELETE on the tags matching in the target and re-create everything. It's not an UPDATE. 
+By default, `copy_dashboard.delete_and_clone_dashboards_with_tags(source_client, dest_client, tags)` performs a DELETE on the tags matching in the target and re-create everything. It's not an UPDATE. 
 
 It will first DELETE all the dashboard in the dest with the given tags, 
 and then clone the dashboard from the source. 

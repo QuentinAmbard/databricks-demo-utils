@@ -24,6 +24,8 @@ def clone_pipelines(source_client: Client, target_client: Client, pipelines):
     new_pipelines = []
     for p in pipelines:
         p = requests.get(source_client.url+"/api/2.0/pipelines/"+p["pipeline_id"], headers = source_client.headers).json()
+        print(p)
+        del p["spec"]["id"]
         new_p = requests.post(target_client.url + "/api/2.0/pipelines", headers = target_client.headers, json = p["spec"]).json()
         print(new_p)
         new_pipelines.append(new_p["pipeline_id"])
@@ -35,7 +37,7 @@ def launch_pipelines(client: Client, pipelines_id):
         p = requests.post(client.url+"/api/2.0/pipelines/"+id+"/updates", headers = client.headers).json()
         print(p)
 
-def clone_pipelines_starting_with(source_client: Client, target_query: Client, prefixes):
+def delete_and_copy_pipelines_starting_with(source_client: Client, target_query: Client, prefixes):
     #Todo could do something more efficient by pushes a list of prefix in the functions instead
     for prefix in prefixes:
         assert len(prefix) > 1
